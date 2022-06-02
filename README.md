@@ -15,7 +15,7 @@ And can be present in html template using **Flask Library**
 ##**The Games:**
 
 ###MemoryGame
-In this game the server will generate a random list of numbers that will appear for 2 seconds and the disappear.
+In this game the serer will generate a random list of numbers that will appear for 2 seconds and the disappear.
 The user will need to memorized the numbers list and write them down in the terminal
 And the difficulty according to the user choice will control the range of the list index numbers, for example:
 - Difficulty 1 -will be a list with 5 numbers 
