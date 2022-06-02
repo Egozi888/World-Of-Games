@@ -8,6 +8,8 @@ The project lets the user choose between 3 different games:
 - MemoryGame.py
 
 All of the games source code located in the games/ directory
+And the games are operate through the ***MainGame*** file, all you need to do is 
+Clone the repo end starts it from any shell 
 
 Every time the user wins one of the games, he gets points that saved to txt file 
 And can be present in html template using **Flask Library** 
