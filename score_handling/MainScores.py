@@ -1,13 +1,19 @@
-from flask import Flask, render_template
-from Score import *
+from distutils.log import error
+from re import template
+from flask import Flask, render_template, template_rendered
+import threading
+# from Score import *
 from Utils import *
+import os
 
-# print (BAD_RETURN_CODE)
-# sum_points = 0
-# file = open("Score.txt", "r")
-# for line in file:
-#     sum_points += int(line)  
-# file.close() 
+print (BAD_RETURN_CODE)
+sum_points = 0
+file = open("Score.txt", "r")
+for line in file:
+    sum_points += int(line)  
+file.close() 
+
+
 
 
 
@@ -46,4 +52,13 @@ def content():
     else:
         return html_error
 
-app.run(debug=True, port=5000)
+# app.run(debug=True, port=5000)
+def WebRun():
+    app.run(host='127.0.0.1', debug=False, port=30000)
+
+def run_script():
+    Thread = threading.Thread(target=WebRun, args=())
+    Thread.start()
+    # from Utils import Screen_cleaner
+    # return Screen_cleaner()
+run_script()
