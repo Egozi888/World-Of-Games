@@ -1,10 +1,6 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
 
-
-range_1 = range(1, 1000)
+points_range = range(1, 1000)
 
 def test_scores_service():
     my_driver = webdriver.Chrome(executable_path="/Users/danielbenharosh/Downloads/chromedriver") 
@@ -12,17 +8,13 @@ def test_scores_service():
     element =  my_driver.find_element_by_id('score').text
     # print (element)
     element = int(element)
-    if element in range_1:
+    if element in points_range:
         return 1
     else:
         return 0     
 
-
-    
-
 test_score = test_scores_service()
-print(bool(test_score))
-
+# print(bool(test_score))
 
 def main_function():
     if test_score == True:
@@ -32,5 +24,3 @@ def main_function():
     
 main_function()
 
-# urls = ['http://www.ynet.co.il','https://mako.co.il']
-# my_driver.get(urls[0])

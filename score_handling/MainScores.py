@@ -1,10 +1,10 @@
-from distutils.log import error
+# from distutils.log import error
 from re import template
 from flask import Flask, render_template, template_rendered
 import threading
 # from Score import *
 from Utils import *
-import os
+
 
 print (BAD_RETURN_CODE)
 sum_points = 0
