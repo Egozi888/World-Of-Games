@@ -4,6 +4,7 @@ from flask import Flask, render_template
 import threading
 # from Score import sum_points 
 from Utils import *
+import os
 
 
 
@@ -24,27 +25,19 @@ def content():
     else:
          return render_template('error.html', ERROR = BAD_RETURN_CODE)
 
-app.run(debug=True, port=5000)
-
-
-
-
-
-
-
-
-
-
-# app = Flask(__name__, template_folder='../templates')
-
-# @app.route("/Score_Read")
-# def content():
-#     # if open("Score.txt", "r").read():
-#         return render_template('score.html')
-#     # else:
-#     #     return html_error
-
 # app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
+
+
+
+
+
+
+
+
+
 
 
 
