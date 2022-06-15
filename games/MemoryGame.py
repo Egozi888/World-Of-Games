@@ -1,7 +1,7 @@
 from random import randint
 import random
 from os import system
-from Live import *
+from Game_Live import *
 import time
 
 

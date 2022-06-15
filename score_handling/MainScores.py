@@ -1,12 +1,12 @@
 # from distutils.log import error
 from re import template
-from flask import Flask, render_template, template_rendered
+from flask import Flask, render_template
 import threading
-# from Score import *
+# from Score import sum_points 
 from Utils import *
 
 
-print (BAD_RETURN_CODE)
+
 sum_points = 0
 file = open("Score.txt", "r")
 for line in file:
@@ -15,50 +15,50 @@ file.close()
 
 
 
-
-
-html_score=f"""<html>
-            <head>
-    <title>Scores Game</title>
-            </head>
-            <body>
-                <h1>
-                    The score is <div id="score">{sum_points}</div>
-                </h1>
-            </body>
-        </html>
-        """
-
-html_error=f"""<html>
-            <head>
-    <title>Scores Game</title>
-            </head>
-            <body>
-                <h1>
-                    <div id="score" style="color:red">{BAD_RETURN_CODE}</div>
-                </h1>
-            </body>
-        </html>
-        """    
-
-
-
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 @app.route("/Score_Read")
 def content():
     if open("Score.txt", "r").read():
-        return html_score
+        return render_template('score.html', SCORE = sum_points)
     else:
-        return html_error
+         return render_template('error.html', ERROR = BAD_RETURN_CODE)
+
+app.run(debug=True, port=5000)
+
+
+
+
+
+
+
+
+
+
+# app = Flask(__name__, template_folder='../templates')
+
+# @app.route("/Score_Read")
+# def content():
+#     # if open("Score.txt", "r").read():
+#         return render_template('score.html')
+#     # else:
+#     #     return html_error
 
 # app.run(debug=True, port=5000)
-def WebRun():
-    app.run(host='127.0.0.1', debug=False, port=30000)
 
-def run_script():
-    Thread = threading.Thread(target=WebRun, args=())
-    Thread.start()
-    # from Utils import Screen_cleaner
-    # return Screen_cleaner()
-run_script()
+
+
+
+
+
+
+
+# def WebRun():
+#     app.run(host='127.0.0.1', debug=False, port=30000)
+
+# def run_script():
+#     Thread = threading.Thread(target=WebRun, args=())
+#     Thread.start()
+#     # from Utils import Screen_cleaner
+#     # return Screen_cleaner()
+# run_script()

@@ -1,6 +1,6 @@
 from random import randint
 import random
-from Live import diffculety
+from Game_Live import diffculety
 
 
 
@@ -62,7 +62,7 @@ def another_game():
     ok = True
     while ok:
             if another_game == ("Yes" and "yes"):
-                from Live import load_game
+                from Game_Live import load_game
                 return load_game()
                 # break
             if another_game == ("No" and "no"):

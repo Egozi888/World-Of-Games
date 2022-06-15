@@ -1,5 +1,5 @@
 import random
-from Live import  *
+from Game_Live import user_diff
 
 
 

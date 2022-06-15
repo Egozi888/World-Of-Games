@@ -1,4 +1,4 @@
-from Live import load_game, welcome
+from Game_Live import load_game, welcome
 # from GuessGame_copy import another_game
 
 

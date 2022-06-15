@@ -1,5 +1,5 @@
 from random import randint
-from Live import *
+from Game_Live import *
 import random
 import json
 import requests
