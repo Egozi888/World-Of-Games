@@ -1,5 +1,6 @@
 # from distutils.log import error
 from re import template
+import re
 from flask import Flask, render_template
 import threading
 # from Score import sum_points 
@@ -8,34 +9,47 @@ import os
 
 
 
-sum_points = 0
-file = open("Score.txt", "r")
-for line in file:
-    sum_points += int(line)  
-file.close() 
+# sum_points = 85
+def read_score():
+    sum_points = 0
+    file = open("Score.txt", "r")
+    for line in file:
+        sum_points += int(line)      
+    file.close() 
+
 
 
 
 app = Flask(__name__, template_folder='../templates')
 
-@app.route("/Score_Read")
+@app.route("/")
 def content():
-    if open("Score.txt", "r").read():
+    try:
+        with open("Score.txt", "r", encoding='utf-8') as f:
+            f.readlines()
         return render_template('score.html', SCORE = sum_points)
-    else:
-         return render_template('error.html', ERROR = BAD_RETURN_CODE)
+    except:
+        return render_template('error.html')
 
-# app.run(debug=True, port=5000)
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    app.run(debug=True, host='0.0.0.0')
 
 
 
+# app = Flask(__name__, template_folder='../templates')
+
+# @app.route('/')
+# def read_score():
+#     try:
+#         with open("Score.txt", 'a', encoding='utf-8') as file:
+#             score = file.readline()
+#         return render_template('score.html', SCORE=sum_points)
+#     except:
+#         return render_template('error.html', ERROR=BAD_RETURN_CODE)
 
 
-
-
+# if __name__ == "__main__":
+#     app.run(debug=True, host='0.0.0.0')
 
 
 

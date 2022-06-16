@@ -11,4 +11,4 @@ for line in file:
     sum_points += int(line)  
 file.close() 
 
-print(sum_points)
+# print(sum_points)
