@@ -13,6 +13,8 @@ RUN pip3 install -r requirements.txt
 # copy every content from the local file to the image
 COPY . /app
 
+COPY Score.txt /app/score_handling
+
 WORKDIR score_handling/
 
 # configure the container to run in an executed manner

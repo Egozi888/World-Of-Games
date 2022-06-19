@@ -15,12 +15,10 @@ def add_score():
     file = open("Score.txt", "r")
     for line in file:
         sum_points += int(line)
-    print(f'Points added: {POINTS_OF_WINNING}\nYour Total points are: {sum_points}')    
+    print(f'Points added: {POINTS_OF_WINNING}\n')    
     file.close() 
     
 
   
 
 # add_score()
-
-
