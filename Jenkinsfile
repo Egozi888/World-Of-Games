@@ -12,7 +12,7 @@ pipeline {
                 stage('Disk-space') {
             steps {
                 echo "- - - - - - - Disk-Space Stage - - - - - - - - "
-                sh ' ls -l'
+                sh ' ls -la'
             }
         }
     }
