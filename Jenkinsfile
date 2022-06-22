@@ -6,9 +6,13 @@ pipeline {
             steps {
                 sh '''
                     ls -la
-                    // python3 click.py 
-                    // python3 welcome.py
                     '''
+            }
+        }
+                stage('Disk-space') {
+            steps {
+                echo "- - - - - - - Disk-Space Stage - - - - - - - - "
+                sh ' ls -l'
             }
         }
     }
