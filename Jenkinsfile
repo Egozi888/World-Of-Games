@@ -9,10 +9,10 @@ pipeline {
                     '''
             }
         }
-                stage('Disk-space') {
+                stage('Image_Build') {
             steps {
-                echo "- - - - - - - Disk-Space Stage - - - - - - - - "
-                sh "ls -la"
+                echo "- - - - - - - Docker Image Build - - - - - - - - "
+                sh "docker build -t flask ."
             }
         }
     }
