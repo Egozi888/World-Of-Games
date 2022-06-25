@@ -24,7 +24,7 @@ pipeline {
            stage('e2e') {
             steps {
                 echo "- - - - - - - e2e check - - - - - - - - "
-                python3 score_handling/e2e.py"
+                sh "python3 score_handling/e2e.py"
             }
         }
     }
