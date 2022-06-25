@@ -21,5 +21,12 @@ pipeline {
                 sh "docker run -p 5000:5000 -d flask"
             }
         }
+           stage('e2e') {
+            steps {
+                echo "- - - - - - - e2e check - - - - - - - - "
+                sh "cd score_handling"
+                sh "ls -lq"
+            }
+        }
     }
 }
